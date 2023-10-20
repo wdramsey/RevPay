@@ -2,7 +2,9 @@ package com.revature.SpringWithLambda;
 
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.revature.SpringWithLambda.daos.LoanDAO;
+import com.revature.SpringWithLambda.daos.UserDAO;
 import com.revature.SpringWithLambda.service.GetAllLoansService;
+import com.revature.SpringWithLambda.service.DepositOrWithdrawal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -37,6 +39,9 @@ public class SpringWithLambdaApplication {
 
 	@Autowired
 	LoanDAO loanDAO;
+	
+//	@Autowired
+//	UserDAO userDAO;
 
 
 	//get all items
@@ -71,5 +76,35 @@ public class SpringWithLambdaApplication {
 //			return response;
 //		};
 //	}
+	//deposit/withdraw from user balance
+//	@Bean
+//	public Consumer<BigDecimal> depositOrWithdrawal() {
+//		return input -> {
+			//take request body as input using API gateway
+			//have to specify which input is which somehow
+				//take in 2 inputs using a BiFunction
+		}
+		//bifunction implementation
+//		import java.util.function.BiFunction;
+//
+//		public class MyBiFunction implements BiFunction<String, String, String> {
+//		    @Override
+//		    public String apply(String input1, String input2) {
+//		        // Your custom logic here
+//		        return "Result: " + input1 + " " + input2;
+//		    }
+//		}
+		//configuration of bifunction as a bean needed
+//		import org.springframework.context.annotation.Bean;
+//		import org.springframework.context.annotation.Configuration;
+//
+//		@Configuration
+//		public class MyFunctionConfiguration {
+//		    @Bean
+//		    public BiFunction<String, String, String> myBiFunction() {
+//		        return new MyBiFunction();
+//		    }
+//		}
+		
 
 }
